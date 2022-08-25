@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <link href="css/change-order-statues.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/6b64cc25f8.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <div id="head"> Change Order Status</div>
+    <div id="searchbar">
+        <div id="search">
+            <form>
+
+                <input id="insrch" type="text" placeholder="Search.." name="search">
+                <button id="btnsrch" type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+    </div>
+    <table style="margin-top: 0;">
+        <tr>
+            <th>ID</th>
+            <th>Customer Name</th>
+            <th>Email</th>
+            <th>Status</th>
+            <th>Payment</th>
+            <th>Total</th>
+            <th>Edit</th>
+            <th>Delete</th>
+            <th>Date</th>
+        </tr>
+
+        <tr>
+            <td>20</td>
+            <td>sarah</td>
+            <td>sarah@mail.com</td>
+            <td>
+                <div class="status">Completed</div>
+            </td>
+            <td>
+                <div class="pay">paid</div>
+            </td>
+            <td>300 USD</td>
+            <td>
+                <button onclick="show()" class="edit"><i class="fa-solid fa-pen-to-square  fa-xl"></i></button>
+
+            </td>
+            <td>
+                <button class="delete">X</button>
+            </td>
+            <td>20-10-2022</td>
+        </tr>
+        <tr>
+            <td>21</td>
+            <td>Alex</td>
+            <td>any@mail.com</td>
+            <td>
+                <div class="status">Pending</div>
+            <td>
+                <div class="pay">unpaid</div>
+            </td>
+            <td>250 USD</td>
+            <td>
+                <button onclick="show()" class="edit"><i class="fa-solid fa-pen-to-square  fa-xl"></i></button>
+            <td>
+                <button class="delete">X</button>
+            </td>
+            <td>12-4-2022</td>
+        </tr>
+        <tr>
+            <td>22</td>
+            <td>Harry</td>
+            <td>harray@mail.com</td>
+            <td>
+                <div class="status">Confimed</div>
+            </td>
+            <td>
+                <div class="pay">paid</div>
+            </td>
+            <td>250 USD</td>
+            <td>
+                <button onclick="show()" class="edit"><i class="fa-solid fa-pen-to-square  fa-xl"></i></button>
+            <td>
+                <button class="delete">X</button>
+            </td>
+            <td>12-4-2022</td>
+        </tr>
+        <tr>
+            <td>23</td>
+            <td>Farida</td>
+            <td>farida@mail.com</td>
+            <td>
+                <div class="status">Cancelled</div>
+            <td>
+                <div class="pay">unpaid</div>
+            </td>
+            <td>250 USD</td>
+            <td>
+                <button onclick="show()" class="edit"><i class="fa-solid fa-pen-to-square  fa-xl"></i></button>
+            </td>
+            <td>
+                <button class="delete">X</button>
+            </td>
+            <td>12-4-2022</td>
+        </tr>
+    </table>
+    <form id="popup">
+        <h2>Order ID : 20</h2>
+        <hr>
+        <div style="display:flex; padding-left: 10px;">
+            <div>
+                <h3>Status</h3>
+                <input type="radio" value="completed" name="status"><label>Completed</label><br>
+                <input type="radio" value="confirmed" name="status"><label>confirmed</label><br>
+                <input type="radio" value="Pending" name="status"><label>Pending</label><br>
+                <input type="radio" value="cancelled" name="status"><label>Cancelled</label><br>
+            </div>
+            <div style="padding-left: 100px;">
+                <h3>Payment</h3>
+                <input type="radio" value="paid" name="Payment"><label>paid</label><br>
+                <input type="radio" value="unpaid" name="Payment"><label>unpaid</label><br>
+            </div>
+        </div>
+        <hr>
+        <div id="buttons">
+            <button onclick="hide()" id="cancel" type="submit">Cancel</button>
+            <button onclick="hide()" id="save">Save</button>
+
+        </div>
+    </form>
+    <script>
+        function show() {
+            document.getElementById("popup").style.display = "block";
+        }
+
+        function hide() {
+            document.getElementById("popup").style.display = "none";
+        }
+
+    </script>
+</body>
+
+</html>

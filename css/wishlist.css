@@ -1,0 +1,101 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+#icon {
+    text-align: center;
+    margin-top: 50px;
+
+}
+
+#wlicon {
+    width: 50px;
+    height: 50px;
+
+}
+
+#head {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 0;
+    color: #2a718e;
+}
+main{
+    display:flex;
+    flex-direction: column;
+    
+}
+.product {
+    display: flex;
+    height: 320px;
+    width: 900px;
+    box-shadow: 5px 5px 5px 5px #bebbbb;
+    margin-bottom: 50px;
+    margin-left: 300px;
+
+}
+
+.img {
+    height: 300px;
+    width: 300px;
+    position: absolute;
+    box-shadow: 1px 1px 1px 1px #bebbbb;
+    margin: 10px;
+
+}
+
+.data {
+    height: 300px;
+    margin-left: 320px;
+}
+
+.heart {
+    position: relative;
+    top: 30px;
+    left: 260px;
+    height: 30px;
+    width: 30px;
+}
+
+.name {
+    color: #2a718e;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.price {
+    color: #2a718e;
+    font-weight: bold;
+    display: inline;
+}
+
+.stock {
+    color: #2a718e;
+    font-weight: bold;
+}
+
+.cat {
+    background-color: #2a718e;
+    color: white;
+    border-radius: 20px;
+    height: 25px;
+    width: 100px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.btn {
+    border: none;
+    color: white;
+    background-color: #2a718e;
+    height: 40px;
+    width: 100px;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: rgb(85, 153, 180);
+}
