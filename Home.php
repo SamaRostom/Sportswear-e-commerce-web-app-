@@ -34,7 +34,7 @@ section{
 	height: 90vh;
 	display: flex;
 	align-items: center;
-	background: url(home.jpg) no-repeat;
+	background: url(images/home.jpg) no-repeat;
 	background-size: cover;
 	background-position: center;
 	background-attachment: fixed;
@@ -80,16 +80,9 @@ section{
 }
 .card{
 	background-color: white;
-	/*from em to px (value*16)*/
 	width: 21.25em;
-	/*lw 3ayza shadow fo2 aw ta7t yeb2a awel value n7otaha be ay rakham ana 3ayzah w ymen aw shemal yeb2a tany value (+ve or -ve)->for the direction talet value hya el blur w rabe3 value color of shadow*/
-	/*rgb-> red green blue, a-> for opacity of color*/
 	box-shadow: 0 5px 25px rgba(1 1 1 / 15%);
-	/*border lines teb2a curved*/
 	border-radius: 8px;
-	/*lw value wa7da bs yeb2a kol el directions teb2a 25px top bottom right and left*/
-	/*padding-> by3mel mesa7a gwa el element nafso ely hwa el card 3andy dlwa2ty
-	margin->by3mel el mesa7a ben el elements w ba3daha*/
 	padding: 25px;
 	margin: 15px;
 	
@@ -156,8 +149,7 @@ section{
   <div id="columnvideo">
 
   <video width="520" height="440" autoplay muted="1">
-  	<!-- <source src="images/Egypt.mp4"> -->
-  		<source src="RUN.mp4">
+  		<source src="images/RUN.mp4">
   </video>
 
   </div>
@@ -174,7 +166,6 @@ section{
 <section class="cards" id="services">
 <div>
 	<h2 class="title">Just Do It!</h2>
-	<!-- <h3><b>are the beginnig</b></h3> -->
 <div class="content">
 	
 	<div class="card">
