@@ -1,0 +1,10 @@
+thead{
+    color: white;
+    background-color:  #2a718e;
+  }
+  .nav-link, .count{
+    color: #2a718e
+  }
+  .topproduct{
+    overflow:hidden;
+  }
