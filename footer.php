@@ -19,7 +19,7 @@
     <a href='www.twitter.com/take-a-hike' target='blank'><i class="fab fa-twitter"></i></a>
     </div>
     <div class='links text-center'>
-        <p class='my-2'><a href='aboutus.php'>About Us</a> &#9679; <a href='contactus.php'>Contact Us</a> &#9679; <a href='signup.php'>Join Us</a></p>
+        <p class='my-2'><a href='about.html'>About Us</a> &#9679; <a href='contactus.html'>Contact Us</a> &#9679; <a href='Sign-up.html'>Join Us</a></p>
     </div>
     </div>
 </body>
