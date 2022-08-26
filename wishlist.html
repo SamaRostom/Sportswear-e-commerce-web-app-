@@ -3,11 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <link href="css/wishlist.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/navbar.css">
     <script src="https://kit.fontawesome.com/6b64cc25f8.js" crossorigin="anonymous"></script>
 
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+  <a class="navbar-brand" href="home.php"><img src="images/logo.jpg" alt="Logo" class="logo" ></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+	  <li class="nav-item">
+          <a class="nav-link" href="home.php">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link about" href="about.html">About Us</a>
+        </li>
+		<li class="nav-item">
+          <a class="nav-link contact" href="contactus.html">Contact Us</a>
+        </li>
+		<li class="nav-item">
+          <a class="nav-link shop" href="Shop.html">Shop</a>
+        </li>
+		<li class="nav-item">
+          <a class="nav-link dashboard" href="dashboard.php">Dashboard</a>
+        </li>
+      </ul>
+      <div class="d-flex">
+      <a class="cart text-decoration-none me-3" href='cart.php'><i class="fas fa-shopping-cart"></i></a>
+	  <a class="profile text-decoration-none me-3" href='profile.php'><i class="fas fa-user-alt"></i></a>
+		<a class="text-decoration-none signup me-3" href='Sign-up.html'>Sign up</a>
+		<span class='seperator me-3'>|</span>
+        <a class="text-decoration-none me-3 signin" href='login.php'>Sign in</a>
+        <a class="signout text-decoration-none me-3" href='signout.php'>Sign out</a>
+</div>
+    </div>
+  </div>
+</nav>
     <div id="icon">
         <img id="wlicon" src=" images/wishlist.jpg"></img>
     </div>
@@ -17,31 +55,39 @@
     <p style="text-align:center; margin-bottom: 50px;">view favorite products you've saved to your wishlist </p>
     <main class="flex-box">
 
-        <section class="product">
+        <div class="card h-100" id="equipcard">
             <div>
-                <img class="img" src="images/yogamat.jpg"></img>
                 <botton class="heart">
                     <i style="color:red;" class="fa-solid fa-heart fa-2xl"></i>
                 </botton>
+                <a href="#"><img class="img-card" src="images/i.jpg" width=100% class="card-img-top" /></a>
+
+
             </div>
-            <div class="data">
-                <p class="name">Yoga Mat</p>
-                <p class="price">Price :</p>
-                <p style="display:inline;">80 USD</p>
-                <p class="stock">In stock</p>
-                <div class="cat">
-                    <p>equipments</p>
-                </div>
-                <div>
-                    <button class="btn">Add to cart</button>
-                    <button class="btn">Remove</button>
-                </div>
+            <div class="card-body">
+                <h4 class="card-text"><b>Item:Squash Racket </b></h4>
+                <h4 class="card-text"><b>Price:$100 </b></h4>
+                <h4 class="card-text"><b>Item Size:Rgular</b></h4>
+                <h4 class="card-text"><b>Item Type:Equipment </b></h4>
             </div>
-        </section>
+            <div>
+                <button class="btn">Add to cart</button>
+                <button class="btn">Remove</button>
+            </div>
+        </div>
 
 
     </main>
-
+<div class='py-4 bg-light col-12 footer'>
+    <div class='networks fs-4 text-center'>
+    <a href='www.facebook.com/take-a-hike' target='blank'><i class="fab fa-facebook"></i></a>
+    <a href='www.instagram.com/take-a-hike' target='blank'><i class="fab fa-instagram"></i></a>
+    <a href='www.twitter.com/take-a-hike' target='blank'><i class="fab fa-twitter"></i></a>
+    </div>
+    <div class='links text-center'>
+        <p class='my-2'><a href='about.html'>About Us</a> &#9679; <a href='contactus.html'>Contact Us</a> &#9679; <a href='Sign-up.html'>Join Us</a></p>
+    </div>
+    </div>
 </body>
 
 </html>
