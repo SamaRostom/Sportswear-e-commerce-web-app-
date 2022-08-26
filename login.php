@@ -95,7 +95,7 @@ include "footer.php";
 	<div class='mt-5 text-center'>
     <input type="submit" class='btn btn-primary px-5 mb-3' value="Log in" name="Submit">
    <input type="reset" class='btn btn-outline-dark px-5 ms-2 mb-3'>
-   <p>Don't have an account? <a class='linkClick' href="SignUp.php">Sign up for free</a></p>
+   <p>Don't have an account? <a class='linkClick' href="Sign-up.html">Sign up for free</a></p>
   </div>
 </form>
 </div>
