@@ -26,13 +26,13 @@
           <a class="nav-link" href="home.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link about" href="aboutus.php">About Us</a>
+          <a class="nav-link about" href="about.html">About Us</a>
         </li>
 		<li class="nav-item">
-          <a class="nav-link contact" href="contactus.php">Contact Us</a>
+          <a class="nav-link contact" href="contactus.html">Contact Us</a>
         </li>
 		<li class="nav-item">
-          <a class="nav-link shop" href="shop.php">Shop</a>
+          <a class="nav-link shop" href="Shop.html">Shop</a>
         </li>
 		<li class="nav-item">
           <a class="nav-link dashboard" href="dashboard.php">Dashboard</a>
@@ -41,7 +41,7 @@
       <div class="d-flex">
       <a class="cart text-decoration-none me-3" href='cart.php'><i class="fas fa-shopping-cart"></i></a>
 	  <a class="profile text-decoration-none me-3" href='profile.php'><i class="fas fa-user-alt"></i></a>
-		<a class="text-decoration-none signup me-3" href='signup.php'>Sign up</a>
+		<a class="text-decoration-none signup me-3" href='Sign-up.html'>Sign up</a>
 		<span class='seperator me-3'>|</span>
         <a class="text-decoration-none me-3 signin" href='login.php'>Sign in</a>
         <a class="signout text-decoration-none me-3" href='signout.php'>Sign out</a>
