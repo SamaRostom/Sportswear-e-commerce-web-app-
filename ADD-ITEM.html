@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add Items</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    input{
+            margin-bottom: 50px;
+            border-radius: 5px;
+        }
+        body{
+            background-image: url("images/s.jpg");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;   
+           
+        }
+        .container{
+            background-color: #ffffffad;
+        }
+  </style>
+  </head>
+  <body>
+    <div class='col-10 col-md-8 col-lg-6 container p-4 my-5 mx-auto'>
+        <h1 class='display-6 mb-3 text-center'><b>Add Items</b></h1>
+<form method="post" action="" onsubmit="validate(this,event)" enctype="multipart/form-data"> 
+ The Price: <input type="text" class='form-control' placeholder= "Price" name="itemPrice"><br>
+
+  Item Type: <input type="text" class='form-control' placeholder= "Item Type" name="Item Type"><br>
+
+  Item Size: <input type="text" class='form-control' placeholder= "Item Size" name="Item Size"><br>
+
+   The Description: <input type="text" class='form-control' placeholder= "Description item" name="DescriptionItem"><br>
+
+
+    Image: <input type="file" class='form-control' name="Sport_Img" id="Sport_Img" ><br>
+    <!-- <div class="alert alert-warning" role="alert">
+    <i class="fas fa-exclamation-triangle"></i> 
+    <span></span>
+</div> -->
+    <div style='text-align:center'><input type='submit' class='btn btn-primary px-5 mt-4' name='submit' value='Add Item'>
+        <input type='button' class='btn btn-outline-dark px-5 ms-3 mt-4' onclick='history.back();' value='Reset'></div>
+
+ </div>
+
+</form>
+
+</body>
+<?php include('footer.php') ?>
+</html>
+
