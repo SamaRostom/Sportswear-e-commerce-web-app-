@@ -54,7 +54,7 @@ main{
 .heart {
     position: relative;
     top: 30px;
-    left: 260px;
+    left: 200px;
     height: 30px;
     width: 30px;
 }
@@ -99,3 +99,38 @@ main{
 .btn:hover {
     background-color: rgb(85, 153, 180);
 }
+ #equipcard {
+            background-color: white;
+            /*from em to px (value*16)*/
+            /*width: 800px;*/
+            width: 30em;
+            /* //height: 35em; */
+            /*lw 3ayza shadow fo2 aw ta7t yeb2a awel value n7otaha be ay rakham ana 3ayzah w ymen aw shemal yeb2a tany value (+ve or -ve)->for the direction talet value hya el blur w rabe3 value color of shadow*/
+            /*rgb-> red green blue, a-> for opacity of color*/
+            box-shadow: 0 5px 25px rgba(1 1 1 / 9%);
+            /*border lines teb2a curved*/
+            /*border-radius: 10px;*/
+            padding: 10px;
+            margin: auto;
+            transition: 0.7s ease;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+
+        .card-body {
+            margin: auto;
+
+        }
+
+        h4 {
+            color: #2a718e;
+        }
+
+        .img-card {
+            /* position: absolute; */
+            height: 458px;
+            width: 30em;
+            padding: 0;
+            margin: 0;
+        }
