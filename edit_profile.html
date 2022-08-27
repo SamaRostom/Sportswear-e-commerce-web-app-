@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Edit Profile</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>       
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css/edit_profile.css">
+    <style>
+      body{
+        background-image: url("images/o.jpg");
+      }
+      
+    </style>
+  
+</head>
+  
+  
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+    <a class="navbar-brand" href="Home.html"><img src="images/logo.jpg" alt="Logo" class="logo" ></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <li class="nav-item">
+            <a class="nav-link" href="Home.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link about" href="about.html">About Us</a>
+          </li>
+      <li class="nav-item">
+            <a class="nav-link contact" href="contactus.html">Contact Us</a>
+          </li>
+      <li class="nav-item">
+            <a class="nav-link shop" href="Shop.html">Shop</a>
+          </li>
+      <li class="nav-item">
+            <a class="nav-link dashboard" href="dashboard.html">Dashboard</a>
+          </li>
+        </ul>
+        <div class="d-flex">
+        <a class="cart text-decoration-none me-3" href='user_cart.html'><i class="fas fa-shopping-cart"></i></a>
+      <a class="profile text-decoration-none me-3" href='profile.html'><i class="fas fa-user-alt"></i></a>
+      <a class="text-decoration-none signup me-3" href='Sign-up.html'>Sign up</a>
+      <span class='seperator me-3'>|</span>
+          <a class="text-decoration-none me-3 signin" href='login.html'>Sign in</a>
+          <a class="signout text-decoration-none me-3" href='signout.html'>Sign out</a>
+  </div>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <div class='col-10 col-md-7 col-lg-6 col-xl-5 m-auto form-container px-5 py-4 my-5'>
+            <h1 class='display-6 text-center'>Edit Profile</h1>
+      <form action="edit_profile.html" method="post" onsubmit="validate(this,event)">
+
+
+
+        <div class="profile-pic">
+          <label class="label" for="file">
+            <span class="glyphicon glyphicon-camera"></span>
+            <span>Change Image</span>
+          </label>
+          <input id="file" type="file" onchange="loadFile(event)"/>
+          <img src="images/user.png" id="output" width="200" />
+        </div>
+
+
+        <div class="input-group mt-4 mb-3">
+            <span class="input-group-text"><i class="fas fa-user"></i></span>
+            <input readonly type="text" class="form-control" placeholder="username" name="Username">
+        </div>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text"><i class="fas fa-at"></i></span>
+            <input type="email" class="form-control" placeholder="example@example.com" name="Email">
+        </div>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text"><i class="fas fa-lock"></i></span>
+            <input type="password" class="form-control" placeholder="Reset your password" name="Password">
+            <div class='showBtn' onclick="ShowPassword()"><i class='far fa-eye'></i></div>
+        </div>
+
+
+        <select class="form-select" name='City' >
+            <option selected disabled hidden>Cairo</option>
+            <option value="Cairo">Cairo</option>
+            <option value="Alexandria">Alexandria</option>
+            <option value="Luxor">Luxor</option>
+            <option value="Aswan">Aswan</option>
+            <option value="Asyut">Asyut</option>
+            <option value="Sohag">Sohag</option>
+            <option value="Port Said">Port Said</option>
+            <option value="Behira">Behira</option>
+            <option value="Faiyum">Faiyum</option>
+            <option value="Giza">Giza</option>
+            <option value="Ismailia">Ismailia</option>
+            <option value="Kafr El Sheikh">Kafr El Sheikh</option>
+            <option value="Red Sea">Red Sea</option>
+            <option value="Matruh">Matruh</option>
+        </select>
+        
+        <p class='mt-3 mb-2'>contact info:</p> 
+
+        <input type="tel" class="form-control d-sm-inline mb-3" placeholder="phone number" name="Phone Number" value="01000000000"> 
+        <input type="tel" class="form-control d-sm-inline mb-3" placeholder="Alternative number" name="Alternative Number" value="01000000000"> 
+        
+        <div class="alert alert-warning" role="alert">
+        <i class="fas fa-exclamation-triangle"></i> 
+        <span></span>
+    </div>
+
+        <div class='mt-4 text-center'>
+        <input id="Update" type="submit" class='btn btn-primary px-5 mb-3' value="Update profile" name="Submit">
+        <input id="Cancel" type="reset" class='btn btn-outline-dark px-5 ms-2 mb-3' value="Cancel">
+      
+      </div>
+    </form> 
+
+    </div>
+
+    <script src="assets/js/edit_profile.js"></script>
+  </main>
+
+
+  <footer>
+    <div class='py-4 bg-light col-12 footer'>
+      <div class='networks fs-4 text-center'>
+      <a href='www.facebook.com/take-a-hike' target='blank'><i class="fab fa-facebook"></i></a>
+      <a href='www.instagram.com/take-a-hike' target='blank'><i class="fab fa-instagram"></i></a>
+      <a href='www.twitter.com/take-a-hike' target='blank'><i class="fab fa-twitter"></i></a>
+      </div>
+      <div class='links text-center'>
+          <p class='my-2'><a href='about.html'>About Us</a> &#9679; <a href='contactus.html'>Contact Us</a> &#9679; <a href='Sign-up.html'>Join Us</a></p>
+      </div>
+      </div>
+  </footer>
+
+
+
+
+</body>
+</html>
