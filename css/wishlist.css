@@ -86,7 +86,7 @@ main{
     text-align: center;
 }
 
-.btn {
+.btn1{
     border: none;
     color: white;
     background-color: #2a718e;
@@ -130,7 +130,7 @@ main{
         .img-card {
             /* position: absolute; */
             height: 458px;
-            width: 30em;
+            width: 29em;
             padding: 0;
             margin: 0;
         }
