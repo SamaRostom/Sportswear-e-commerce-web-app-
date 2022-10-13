@@ -6,8 +6,7 @@ const bodyParser = require("body-parser");
 const {PORT} = require("./configure")
 const {list,viewOne,create,update,deleteproduct,addRate,topselling,onsale,newProducts} = require("./Controllers/productController");
 const {storage} = require("./MiddleWare/productMiddleWare");
-const { on } = require("events");
-
+const {login,register} = require("./Controllers/UsersController");
 
 const app = express();
 
@@ -36,10 +35,10 @@ app.get("/new", newProducts);
 // get onsale products
 app.get("/onsale",onsale)
 
+//--------------- User Routes ------------------------//
 
-
-
-
+app.post("/login", login);
+app.post("/register", register);
 
 
 
