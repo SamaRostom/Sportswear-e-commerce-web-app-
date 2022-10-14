@@ -1,0 +1,24 @@
+<section>
+<div id="addp" class='col-10 col-md-8 col-lg-6 container p-4 my-5 mx-auto'>
+<h1 class='display-6 mb-3 text-center'><b>Add Items</b></h1>
+<form method="post" action="" onsubmit="validate(this,event)" enctype="multipart/form-data">
+    <label>The Price: </label>
+    <input type="text" class='form-control' placeholder= "Price" name="itemPrice"><br>
+    <label>Item Type:  </label>
+    <input type="text" class='form-control' placeholder= "Item Type" name="Item Type"><br>
+    <label>Item Size:  </label>
+    <input type="text" class='form-control' placeholder= "Item Size" name="Item Size"><br>
+    <label>The Description:  </label>
+    <input type="text" class='form-control' placeholder= "Description item" name="DescriptionItem"><br>
+    <label>Image:  </label>
+    <input type="file" class='form-control' name="Sport_Img" id="Sport_Img" ><br>
+
+    <div style='text-align:center'>
+      <input type='submit' class='btn btn-primary px-5 mt-4' name='submit' value='Add Item'>
+
+      <input type='button' class='btn btn-outline-dark px-5 ms-3 mt-4' onclick='history.back();' value='Reset'>
+    </div>
+</form>
+</div>
+</section>
+
