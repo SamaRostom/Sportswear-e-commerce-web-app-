@@ -1,5 +1,5 @@
 const Mongo = require("mongodb")
-const {ObjectId} = require("mongodb");
+const { ObjectId } = require("mongodb");
 const MongoClient = Mongo.MongoClient;
 
 function MongoConnect(url) {
@@ -64,7 +64,7 @@ async function update(collectionName, id, data) {
             .then((db) => {
                 const dbo = db.db("ecommerce");
                 dbo.collection(collectionName)
-                    .updateOne({_id: ObjectId(id)}, {$set: data}, function (error, result) {
+                    .updateOne({ _id: ObjectId(id) }, { $set: data }, function (error, result) {
                         if (error) return reject(error);
                         resolve(result);
                         db.close();
@@ -72,7 +72,18 @@ async function update(collectionName, id, data) {
             })
     });
 }
-
+function updateadd(collectionName, id, data) {
+    return new Promise((resolve, reject) => {
+        MongoConnect(URL).then((db) => {
+            const dbo = db.db("shop");
+            dbo.collection(collectionName).updateOne({ user_id: ObjectId(id) }, { $set: data }, function (error, result) {
+                if (error) return reject(error);
+                resolve(result);
+                db.close();
+            })
+        })
+    })
+}
 
 async function deleteOne(collectionName, id) {
     return new Promise((resolve, reject) => {
@@ -80,7 +91,7 @@ async function deleteOne(collectionName, id) {
             .then((db) => {
                 const dbo = db.db("ecommerce");
                 dbo.collection(collectionName)
-                    .deleteOne({_id: ObjectId(id)}, function (error, result) {
+                    .deleteOne({ _id: ObjectId(id) }, function (error, result) {
                         if (error) return reject(error);
                         resolve(result);
                         db.close();
@@ -95,5 +106,6 @@ module.exports = {
     find,
     findOne,
     deleteOne,
-    update
+    update,
+    updateadd
 }

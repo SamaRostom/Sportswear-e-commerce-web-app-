@@ -1,5 +1,5 @@
-const {ObjectId} = require("mongodb");
-const {deleteOne, insertOne, find, findOne, update} = require("./Base");
+const { ObjectId } = require("mongodb");
+const { deleteOne, insertOne, find, findOne, update } = require("./Base");
 
 class BaseModel {
     name;
@@ -16,12 +16,25 @@ class BaseModel {
 
     async findOne(id) {
         try {
-            return await findOne(this.name, {_id: ObjectId(id)})
+            return await findOne(this.name, { _id: ObjectId(id) })
         } catch (e) {
             return null
         }
     }
-
+    async findcart(id) {
+        try {
+            return await findOne(this.name, { user_id: ObjectId(id) })
+        } catch (e) {
+            return null
+        }
+    }
+    async updateadd(id, params) {
+        try {
+            return await updateadd(this.name, id, params)
+        } catch (e) {
+            return null
+        }
+    }
 
     async update(id, params) {
         try {
