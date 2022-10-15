@@ -1,0 +1,6 @@
+.networks a,
+.links p, .links a{
+    text-decoration: none;
+    color: #2a718e;
+    padding: 0rem .5rem
+}
