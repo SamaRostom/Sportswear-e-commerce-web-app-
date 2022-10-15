@@ -5,18 +5,19 @@ const {PORT} = require("../configure")
 
 const list =async(req, res)=>{
         let service = new ProductService();
-        res.json({
-            list: await service.list(req.user, req.page, 10)
-        });
+        let list = await service.list(req.user, req.page, 10)
+        res.json(
+            list
+        );
     }
 
 
 const  viewOne =async (req, res)=>{
     const name = req.params.name;
     let service = new ProductService();
-    res.json({
-        product: await service.one(name)
-    });
+    res.json(
+        await service.one(name)
+    );
 }
 
 const create = async (req, res)=>{
@@ -27,9 +28,9 @@ const create = async (req, res)=>{
     data.nratings=0;
     nsale=0;
     await product.insertOne(data);
-    res.json({
-        message: "product created successfully",
-    });
+    res.json(
+        "product created successfully",
+    );
     }
 
 const update =async(req, res)=>{
@@ -37,18 +38,18 @@ const update =async(req, res)=>{
     const {id} = req.params;
     const {discount,price} = req.body;
     let service = new ProductService();
-    res.json({
-        product: await service.update(id, {discount, price})
-    });
+    res.json(
+        await service.update(id, {discount, price})
+    );
 }
 
 const deleteproduct = async (req, res) =>{
     const {id} = req.params;
     let service = new ProductService();
     await service.delete(id)
-    res.json({
-        message: "product deleted successfully"
-    });
+    res.json(
+        "product deleted successfully"
+    );
     }
 
 const addRate =async(req, res)=>{
@@ -64,10 +65,10 @@ const addRate =async(req, res)=>{
         });
     rate = (rate + originaldata.rate)/(originaldata.nratings+1)
     let nratings = originaldata.nratings +1;
-    res.json({
-            product: await service.update(id, {rate, nratings})
+    res.json(
+        await service.update(id, {rate, nratings})
             
-    });
+    );
 }
 
 
@@ -76,19 +77,19 @@ const topselling = async (req,res)=>{
     let products = await service.list(req.user, req.page, 10)
     
     let topSell=products.filter(v=> v.nsale>=10)
-    res.json({
-            list: topSell
-    });
+    res.json(
+        topSell
+    );
 }
 
 const newProducts =  async (req,res)=>{
     let service = new ProductService();
     let products = await service.list(req.user, req.page, 10)
     
-    let newlyAdded=products.filter(v=> v.nratings=0)
-    res.json({
-            list: newlyAdded
-    });
+    let newlyAdded=products.filter(v=> v.nratings <=0)
+    res.json(
+        newlyAdded
+    );
 }
 
 const onsale =  async (req,res)=>{
@@ -96,9 +97,9 @@ const onsale =  async (req,res)=>{
     let products = await service.list(req.user, req.page, 10)
     
     let Sale=products.filter(v=> v.discount>=0.3)
-    res.json({
-            list: Sale
-    });
+    res.json(
+        Sale
+    );
 }
 
 module.exports = {

@@ -29,8 +29,7 @@ class ProductService {
 
     async getspecific(filter) {
 
-        //if (!user || user == "guest")
-        //    return [{name: "only 1 "}]
+        
         let product = new Product();
         return await product.find(filter)
     }

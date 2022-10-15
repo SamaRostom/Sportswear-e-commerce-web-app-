@@ -1,1 +1,25 @@
-<p>product works!</p>
+<div class="product-item bg-light mb-4">
+  <div class="product-img position-relative overflow-hidden">
+    <img class="img-fluid w-100" src="{{product.imagePath}}" alt="" />
+    <div class="product-action">
+      <a class="btn btn-outline-dark btn-square">
+        <i class="fa fa-shopping-cart"></i>
+      </a>
+    </div>
+  </div>
+  <div class="text-center py-4">
+    <a class="h6 text-decoration-none text-truncate">{{ product.name}}</a>
+    
+    <div class="d-flex align-items-center justify-content-center mt-2">
+      <h5>{{ product.price*(1-product.discount) | currency }}</h5>
+      <h6 class="text-muted ml-2">
+        <del>{{ product.price | currency }}</del>
+      </h6>
+    </div>
+    <div class="d-flex align-items-center justify-content-center mb-1">
+      <app-rating [rating]="product.rate"></app-rating>
+      <small>({{ product.nratings }})</small>
+    </div>
+  </div>
+</div>
+

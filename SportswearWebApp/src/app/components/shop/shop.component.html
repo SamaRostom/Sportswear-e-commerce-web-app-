@@ -1,1 +1,14 @@
-<p>shop works!</p>
+<div class="container-fluid">
+  <div class="row px-xl-5">
+    
+    <div class="col-lg-3 col-md-4">
+      <app-filter-product (FilterEmitter)="changeCategory($event)"></app-filter-product>
+    </div>
+    
+
+    <div class="col-lg-9 col-md-8">
+      <app-shop-product [Categories]="categories"></app-shop-product>
+    </div>
+    
+  </div>
+</div>

@@ -15,7 +15,10 @@ import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { AddproductComponent } from './components/addproduct/addproduct.component';
-
+import { RatingComponent } from './components/rating/rating.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FilterProductComponent } from './components/filter-product/filter-product.component';
+import { ShopProductComponent } from './components/shop-product/shop-product.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,11 +33,15 @@ import { AddproductComponent } from './components/addproduct/addproduct.componen
     RegisterComponent,
     LoginComponent,
     ProfileComponent,
-    AddproductComponent
+    AddproductComponent,
+    RatingComponent,
+    FilterProductComponent,
+    ShopProductComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,48 @@
+<div class="row pb-3">
+  <div class="col-12 pb-1">
+    <div class="d-flex align-items-center justify-content-between mb-4">
+      
+      <div class="ml-2">
+        <div class="btn-group">
+          <h6>Sort By:</h6>
+          <div id="inline">
+            <a class="dropdown-item" href="#">price</a>
+            <a class="dropdown-item" href="#">discount</a>
+            <a class="dropdown-item" href="#">Best Rating</a>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-4 col-md-6 col-sm-6 pb-1" *ngFor="let product of getProducts()">
+    <app-product [product]="product"></app-product>
+  </div>
+  <div class="col-12">
+
+  <nav>
+      <ul class="pagination justify-content-center">
+        <li class="page-item" [ngClass]="{ disabled: currentPage == 0 }">
+          <a class="page-link" (click)="decCurrentPage()">Previous</a>
+        </li>
+        <li
+          *ngFor="let ai of [].constructor(getPageSize()); let i = index"
+          class="page-item"
+          [ngClass]="{ active: currentPage == i }"
+        >
+          <a class="page-link" (click)="setCurrentPage(i)">{{ i + 1 }}</a>
+        </li>
+        <li
+          class="page-item"
+          [ngClass]="{ disabled: currentPage == getPageSize() - 1 }"
+        >
+          <a class="page-link" (click)="incCurrentPage()">Next</a>
+        </li>
+      </ul>
+  </nav>
+
+
+
+  </div>
+</div>
+
