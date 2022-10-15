@@ -8,9 +8,9 @@ const login= async (req, res)=>{
         let userService = new UsersService;
         let user = await userService.login(username, password)
 
-        res.json({
+        res.json(
             user
-        });
+        );
     }
 
 const register = async (req, res)=>{
@@ -20,9 +20,9 @@ const register = async (req, res)=>{
         let userService = new UsersService;
         let user = await userService.register(username, password,email)
 
-        res.json({
+        res.json(
             user
-        });
+        );
     }
 
 

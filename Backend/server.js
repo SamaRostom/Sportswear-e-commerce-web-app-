@@ -35,7 +35,6 @@ app.get("/topselling", topselling)
 app.get("/new", newProducts);
 // get onsale products
 app.get("/onsale", onsale)
-
 //--------------- User Routes ------------------------//
 
 app.post("/login", login);

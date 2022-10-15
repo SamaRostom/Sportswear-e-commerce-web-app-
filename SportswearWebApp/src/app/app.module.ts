@@ -14,18 +14,13 @@ import { ProductComponent } from './components/product/product.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { ProfileComponent } from './components/profile/profile.component';
-import { AddproductComponent } from './components/addproduct/addproduct.component';
-<<<<<<< HEAD
 import { RatingComponent } from './components/rating/rating.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FilterProductComponent } from './components/filter-product/filter-product.component';
 import { ShopProductComponent } from './components/shop-product/shop-product.component';
-=======
-import { CartComponent } from './components/cart/cart.component';
-import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
->>>>>>> 614fa706e8da197d0a7eb10468fad4234d7e3460
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,24 +35,15 @@ import { FormsModule } from '@angular/forms';
     RegisterComponent,
     LoginComponent,
     ProfileComponent,
-    AddproductComponent,
-<<<<<<< HEAD
     RatingComponent,
     FilterProductComponent,
     ShopProductComponent
-=======
-    CartComponent
->>>>>>> 614fa706e8da197d0a7eb10468fad4234d7e3460
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-<<<<<<< HEAD
-    HttpClientModule
-=======
-    HttpClientModule,
     FormsModule,
->>>>>>> 614fa706e8da197d0a7eb10468fad4234d7e3460
+    AppRoutingModule ,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
