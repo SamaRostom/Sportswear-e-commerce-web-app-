@@ -4,9 +4,9 @@ const path = require("path");
 const cors = require("cors")
 const bodyParser = require("body-parser");
 const { PORT } = require("./configure")
-const { list, viewOne, create, update, deleteproduct, addRate, topselling, onsale, newProducts } = require("./Controllers/productController");
+const { list, viewOne, create, update, deleteproduct, addRate, topselling, onsale, newProducts,GetByCategory } = require("./Controllers/productController");
 const { storage } = require("./MiddleWare/productMiddleWare");
-const { login, register } = require("./Controllers/UsersController");
+const { login, register,getuser} = require("./Controllers/UsersController");
 const { CartController } = require('./Controllers/cartcontroller')
 const { isuser } = require('./MiddleWare/AuthMiddleware')
 let CartControllers = new CartController();
@@ -34,11 +34,15 @@ app.get("/topselling", topselling)
 // get new products
 app.get("/new", newProducts);
 // get onsale products
-app.get("/onsale", onsale)
+app.get("/onsale", onsale);
+// get products by category
+app.get("/getproducts/:category",GetByCategory);
+
 //--------------- User Routes ------------------------//
 
 app.post("/login", login);
 app.post("/register", register);
+app.get("/getuser",getuser);
 
 //--------------- cart Routes ------------------------//
 app.post('/cart/create', CartControllers.create)
@@ -55,6 +59,5 @@ app.post("/auth/login", isuser, login)
 
 
 
-
 // listening on port 3000
-app.listen(PORT, () => { console.log("server is listening:" + PORT) })
+app.listen(PORT, () => { console.log("server is listening: " + PORT) })

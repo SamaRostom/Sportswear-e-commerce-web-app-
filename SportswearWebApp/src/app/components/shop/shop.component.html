@@ -1,14 +1,57 @@
 <div class="container-fluid">
   <div class="row px-xl-5">
-    
-    <div class="col-lg-3 col-md-4">
-      <app-filter-product (FilterEmitter)="changeCategory($event)"></app-filter-product>
+
+  <div class="col-lg-3 col-md-4">
+
+<h5 class="section-title position-relative text-uppercase mb-3">
+  <span class="bg-secondary pr-3">Filter by Category:</span>
+</h5>
+<div class="bg-light p-4 mb-30">
+  <form>
+    <div class="btn-group">
+      <div id="inline">
+        <button class="dropdown-item" (click)="getproductsFiltered('All')">All</button>
+        <button class="dropdown-item" (click)="getproductsFiltered('bottles')">bottles</button>
+        <button class="dropdown-item" (click)="getproductsFiltered('Mat')">Mats</button>
+        <button class="dropdown-item" (click)="getproductsFiltered('utility')">Utilities</button>
+        <button class="dropdown-item" (click)="getproductsFiltered('watches')">Watches</button>
+      </div>
     </div>
-    
+
+  </form>
+</div>
+
+<h5 class="section-title position-relative text-uppercase mb-3">
+  <span class="bg-secondary pr-3">Sort by:</span>
+</h5>
+<div class="bg-light p-4 mb-30">
+  <form>
+    <div class="btn-group">
+      <div id="inline">
+        <button class="dropdown-item" (click)="sort('price')">Price</button>
+        <button class="dropdown-item" (click)="sort('nsale')">Top Sell</button>
+      </div>
+    </div>
+
+  </form>
+</div>
+
+</div>
+
 
     <div class="col-lg-9 col-md-8">
-      <app-shop-product [Categories]="categories"></app-shop-product>
+      <div class="row pb-3">
+
+        <div class="col-lg-4 col-md-6 col-sm-6 pb-1" *ngFor="let product of getproducts()">
+          <app-product [product]="product" ></app-product>
+        </div>
+        <div class="col-12">
+
+        </div>
+      </div>
+
+
     </div>
-    
+
   </div>
 </div>

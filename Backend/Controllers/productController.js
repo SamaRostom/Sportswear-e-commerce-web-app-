@@ -17,9 +17,9 @@ const  viewOne =async (req, res)=>{
     let service = new ProductService();
     res.json(
         await service.one(name)
+        
     );
 }
-
 const create = async (req, res)=>{
     let product = new Product();
     let data = req.body;
@@ -32,6 +32,7 @@ const create = async (req, res)=>{
         "product created successfully",
     );
     }
+
 
 const update =async(req, res)=>{
 
@@ -102,6 +103,17 @@ const onsale =  async (req,res)=>{
     );
 }
 
+
+const GetByCategory =  async (req,res)=>{
+    let service = new ProductService();
+    let products = await service.list(req.user, req.page, 10)
+    let {category} = req.params    
+    let p=products.filter(v=> v.category ==category)
+    res.json(
+        p
+    );
+}
+
 module.exports = {
     list,
     viewOne,
@@ -111,6 +123,7 @@ module.exports = {
     addRate,
     topselling,
     newProducts,
-    onsale
+    onsale,
+    GetByCategory
 
 }

@@ -16,8 +16,6 @@ import { LoginComponent } from './components/login/login.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { RatingComponent } from './components/rating/rating.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FilterProductComponent } from './components/filter-product/filter-product.component';
-import { ShopProductComponent } from './components/shop-product/shop-product.component';
 import { FormsModule } from '@angular/forms';
 
 
@@ -35,9 +33,7 @@ import { FormsModule } from '@angular/forms';
     RegisterComponent,
     LoginComponent,
     ProfileComponent,
-    RatingComponent,
-    FilterProductComponent,
-    ShopProductComponent
+    RatingComponent
   ],
   imports: [
     BrowserModule,

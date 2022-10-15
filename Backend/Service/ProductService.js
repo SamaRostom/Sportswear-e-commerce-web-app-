@@ -11,7 +11,6 @@ class ProductService {
         let product = new Product();
         return await product.find()
     }
-
     async one(name) {
         let product = new Product();
         return await product.findOne(name)
@@ -34,9 +33,6 @@ class ProductService {
         return await product.find(filter)
     }
 }
-
-
-
 
 module.exports = {
     ProductService

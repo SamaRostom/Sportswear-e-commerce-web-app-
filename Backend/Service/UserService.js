@@ -8,8 +8,6 @@ class UsersService {
 
         let userModel = new User;
         let userlist = await userModel.find({username: username});
-
-
         // check if user found
         if (userlist.length == 0)
             return {status: false, message: "user not found"};
