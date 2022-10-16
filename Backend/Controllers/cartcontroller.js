@@ -11,7 +11,7 @@ class CartController {
         const user = req.user;
 
         await Cart.insertOne({
-            "user_id": user.user_id,
+            "user_id": user._id,
             "items": [],
         });
 
@@ -68,6 +68,7 @@ class CartController {
             }
         }
         let quantity = car.items[result].qyt
+        if (quantity == 0) { return }
         car.items[result].qyt = quantity - 1;
 
         res.json({
@@ -81,7 +82,8 @@ class CartController {
         let product = await pservice.one(pid)
         let cservice = new CartService()
         let car = await cservice.one(user._id)
-        car.items.splice(product)
+
+        car.items.pop(product)
         res.json({
             car: await cservice.updateadd(user._id, car)
 
@@ -92,6 +94,7 @@ class CartController {
         let service = new CartService()
         let cart = await service.one(user._id)
         let pc = 0;
+        if (cart.items == null) { return }
         let array = cart.items
         for (var i = 0; i < array.length; i++) {
             pc += array[i].item.price * array[i].qyt;
@@ -103,10 +106,11 @@ class CartController {
 
     }
     async subtotal(req, res) {
-        const user = req.user;
+        const id = req.params.id;
         let service = new CartService()
-        let cart = await service.one(user._id)
+        let cart = await service.one(id)
         let pc = 0;
+        if (cart.items == null) { return }
         let array = cart.items
         for (var i = 0; i < array.length; i++) {
             pc += array[i].item.price * array[i].qyt;
@@ -123,6 +127,7 @@ class CartController {
         let service = new CartService()
         let cart = await service.one(user._id)
         let pc = 0;
+        if (cart.items == null) { return }
         let array = cart.items
         for (var i = 0; i < array.length; i++) {
             pc += array[i].item.price * array[i].qyt;
@@ -133,23 +138,25 @@ class CartController {
             total
         });
     }
-    // async viewOne(req, res) {
-    //     const user = req.user;
-    //     let service = new CartService();
-    //     let cart = await service.one(user._id)
-    //     res.json({
-    //         cart: cart.items
-    //     });
-    // }
     async viewOne(req, res) {
-        const id = req.params.id;
+        const user = req.user;
         let service = new CartService();
-        let car = await service.one(id)
-        let items = car.items
+        let cart = await service.one(user._id)
+        if (cart.items == null) { return }
+        let items = cart.items
         res.json({
             items
         });
     }
+    // async viewOne(req, res) {
+    //     const id = req.params.id;
+    //     let service = new CartService();
+    //     let car = await service.one(id)
+    //     let items = car.items
+    //     res.json({
+    //         items
+    //     });
+    // }
 }
 
 module.exports = {

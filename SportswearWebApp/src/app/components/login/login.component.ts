@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
     this.authService.login(this.user.username, this.user.password).subscribe(
       (data) => {
         this.authService.saveToken(data);
-        //console.log(data)
+        console.log(data)
         this.isLoading = false;
         this.router.navigate(['']);
       },

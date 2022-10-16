@@ -46,15 +46,15 @@ app.get("/getuser",getuser);
 
 //--------------- cart Routes ------------------------//
 app.post('/cart/create', CartControllers.create)
-app.put('/cart/add/:pid', isuser, CartControllers.add)
-app.post('/cart/inc/:pid', CartControllers.inc)
-app.post('/cart/dec/:pid', CartControllers.dec)
-app.put('/cart/remove/:pid', isuser, CartControllers.remove)
-app.get("/cart/:id", CartControllers.viewOne);
-app.post("/cart/price", CartControllers.subtotal);
-app.post("/cart/ship", CartControllers.shipping);
-app.post("/cart/totalprice", CartControllers.total);
-app.post("/auth/register", register)
+app.get('/cart/add/:pid', isuser, CartControllers.add)
+app.get('/cart/inc/:pid', isuser, CartControllers.inc)
+app.get('/cart/dec/:pid', isuser, CartControllers.dec)
+app.get('/cart/remove/:pid', isuser, CartControllers.remove)
+app.get("/cart", isuser, CartControllers.viewOne);
+app.post('/cart/price/:id', CartControllers.subtotal);
+app.get("/cart/ship", isuser, CartControllers.shipping);
+app.get("/cart/totalprice", isuser, CartControllers.total);
+app.post("/auth/register", isuser, register)
 app.post("/auth/login", isuser, login)
 
 
