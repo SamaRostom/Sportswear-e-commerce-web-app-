@@ -41,17 +41,17 @@
 
                                     <div class="d-flex justify-content-between px-x">
                                         <p class="fw-bold">SubTotal:</p>
-                                        <p class="fw-bold">{{price.pc }} $</p>
+                                        <p class="fw-bold">{{price.pc | currency}}</p>
 
                                     </div>
                                     <div class="d-flex justify-content-between px-x">
                                         <p class="fw-bold">Shipping:</p>
-                                        <p class="fw-bold">{{Ship.ship }}$</p>
+                                        <p class="fw-bold">{{Ship.ship | currency}}</p>
                                     </div>
                                     <div class="d-flex justify-content-between p-2 mb-2"
                                         style="background-color: #e1f5fe;">
                                         <h5 class="fw-bold mb-0">Total:</h5>
-                                        <h5 class="fw-bold mb-0">{{ price.pc + Ship.ship}}$</h5>
+                                        <h5 class="fw-bold mb-0">{{ (price.pc + Ship.ship) | currency}}</h5>
                                     </div>
 
                                 </div>
@@ -63,13 +63,13 @@
 
                                         <div class="form-outline mb-5">
                                             <input type="text" id="typeText" class="form-control form-control-lg"
-                                                siez="17" value="1234 5678 9012 3457" minlength="19" maxlength="19" />
+                                                siez="17"  minlength="19" maxlength="19" />
                                             <label class="form-label" for="typeText">Card Number</label>
                                         </div>
 
                                         <div class="form-outline mb-5">
                                             <input type="text" id="typeName" class="form-control form-control-lg"
-                                                siez="17" value="Hadeel Sameh" />
+                                                siez="17" />
                                             <label class="form-label" for="typeName">Name on card</label>
                                         </div>
 
@@ -77,7 +77,7 @@
                                             <div class="col-md-6 mb-5">
                                                 <div class="form-outline">
                                                     <input type="text" id="typeExp" class="form-control form-control-lg"
-                                                        value="01/25" size="7" id="exp" minlength="7" maxlength="7" />
+                                                      size="7" id="exp" minlength="7" maxlength="7" />
                                                     <label class="form-label" for="typeExp">Expiration</label>
                                                 </div>
                                             </div>
@@ -85,7 +85,7 @@
                                                 <div class="form-outline">
                                                     <input type="password" id="typeText"
                                                         class="form-control form-control-lg"
-                                                        value="&#9679;&#9679;&#9679;" size="1" minlength="3"
+                                                        size="1" minlength="3"
                                                         maxlength="3" />
                                                     <label class="form-label" for="typeText">Cvv</label>
                                                 </div>
@@ -95,7 +95,7 @@
 
 
                                         <button type="button" class="btn btn-primary btn-block btn-lg"
-                                            style="background-color:#2a718e;">Buy now</button>
+                                            style="background-color:#2a718e;" (click)="DoCheckout()">Buy now</button>
 
 
 

@@ -13,9 +13,8 @@ export class CartComponent implements OnInit {
 
 
   }
-
-  price: any
-  Ship: any
+  price: any = 0;
+  Ship: any = 0;
   public items: Array<any> = []
   delete(id: any) { this.cartservice.removeproduct(id).subscribe((data) => { window.location.reload() }) }
   inc(id: any) { this.cartservice.inc(id).subscribe((data) => { }) }
@@ -53,6 +52,11 @@ export class CartComponent implements OnInit {
       }
     )
 
+  }
+
+
+  DoCheckout(){
+    this.cartservice.checkout();
   }
 
 

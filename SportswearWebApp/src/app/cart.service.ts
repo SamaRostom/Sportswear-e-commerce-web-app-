@@ -49,4 +49,11 @@ export class CartService {
       });
   }
 
+  checkout(){
+    return  this.httpClient.post(`http://localhost:3000/order`,
+    {
+      headers: { Authorization: `${localStorage.getItem('token')}` },
+    });
+  }
+
 }

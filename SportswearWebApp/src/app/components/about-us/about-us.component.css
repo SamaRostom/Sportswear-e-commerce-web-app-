@@ -13,8 +13,8 @@ h1, h3{
     background:#2a718e;
     color:black;
     border-radius:50%;
-    height:400px;
-    width:400px;
+    height:420px;
+    width:420px;
     margin:0 200px 0 200px;
     text-align:center;
     padding:30px;
@@ -40,11 +40,12 @@ h1, h3{
 
 .words2{
   color:white;
+  margin-top: 20px;
 
-    font-size:18px;
-    font-family:sans-serif;
-    padding-left:20px;
-    text-align:center;
+  font-size:18px;
+  font-family:sans-serif;
+  /*padding-left:20px;*/
+  text-align:center;
 }
 
 .img{

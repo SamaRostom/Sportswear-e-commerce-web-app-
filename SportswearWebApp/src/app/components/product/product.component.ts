@@ -12,6 +12,7 @@ export class ProductComponent implements OnInit {
 
   constructor(private cartservice: CartService) { }
   addToCart(id: any) {
+    
     this.cartservice.addproduct(id).subscribe((data) => {
       console.log(id)
     })
