@@ -106,9 +106,9 @@ class CartController {
 
     }
     async subtotal(req, res) {
-        const id = req.params.id;
+        const user = req.user;
         let service = new CartService()
-        let cart = await service.one(id)
+        let cart = await service.one(user._id)
         let pc = 0;
         if (cart.items == null) { return }
         let array = cart.items

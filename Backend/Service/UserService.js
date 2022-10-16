@@ -22,7 +22,7 @@ class UsersService {
 
         let token = jwt.sign({ username: user.username, id: user._id }, 'shhhhh');
 
-        return { status: true, token, id: user._id };
+        return { status: true, token };
     }
 
     async findById(authid) {

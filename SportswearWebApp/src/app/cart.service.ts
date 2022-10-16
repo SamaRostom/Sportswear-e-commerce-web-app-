@@ -25,7 +25,7 @@ export class CartService {
       });
   }
   getPrice() {
-    return this.httpClient.post(`http://localhost:3000/cart/price/${this.id}`,
+    return this.httpClient.get(`http://localhost:3000/cart/price`,
       {
         headers: { Authorization: `${localStorage.getItem('token')}` },
       });

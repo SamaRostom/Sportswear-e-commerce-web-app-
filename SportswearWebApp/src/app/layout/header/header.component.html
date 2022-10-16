@@ -28,8 +28,8 @@
         <a class="profile text-decoration-none me-3" routerLink='profile'><i class="fas fa-user-alt"></i></a>
         <a class="text-decoration-none signup me-3" routerLink='register'>Sign up</a>
         <span class='seperator me-3'>|</span>
-        <a class="text-decoration-none me-3 signin" routerLink='login'>Sign in</a>
-        <a class="signout text-decoration-none me-3" href='signout.php'>Sign out</a>
+        <a class="text-decoration-none me-3 signin" routerLink='login' *ngIf="!(isLogedIn())">Sign in</a>
+        <a class="signout text-decoration-none me-3" (click)="logout()" *ngIf="isLogedIn()">Sign out</a>
       </div>
     </div>
   </div>
