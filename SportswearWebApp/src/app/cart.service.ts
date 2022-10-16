@@ -7,28 +7,46 @@ export class CartService {
   constructor(private httpClient: HttpClient) { }
   id: string = `${localStorage.getItem('id')}`
   getData() {
-    return this.httpClient.get(`http://localhost:3000/cart/${this.id}`,
+    return this.httpClient.get(`http://localhost:3000/cart`,
       {
         headers: { Authorization: `${localStorage.getItem('token')}` },
       });
   }
-
+  removeproduct(id: any) {
+    return this.httpClient.get(`http://localhost:3000/cart/remove/${id}`,
+      {
+        headers: { Authorization: `${localStorage.getItem('token')}` },
+      });
+  }
+  addproduct(id: any) {
+    return this.httpClient.get(`http://localhost:3000/cart/add/${id}`,
+      {
+        headers: { Authorization: `${localStorage.getItem('token')}` },
+      });
+  }
   getPrice() {
-    return this.httpClient.post(`http://localhost:3000/price/${this.id}`,
+    return this.httpClient.get(`http://localhost:3000/cart/price`,
       {
         headers: { Authorization: `${localStorage.getItem('token')}` },
       });
   }
   getShip() {
-    return this.httpClient.post(`http://localhost:3000/ship/${this.id}`,
+    return this.httpClient.get(`http://localhost:3000/cart/ship`,
       {
         headers: { Authorization: `${localStorage.getItem('token')}` },
       });
   }
-  gettotal() {
-    return this.httpClient.post(`http://localhost:3000/totalprice/${this.id}`,
+  inc(id: any) {
+    return this.httpClient.get(`http://localhost:3000/cart/inc/${id}`,
       {
         headers: { Authorization: `${localStorage.getItem('token')}` },
       });
   }
+  dec(id: any) {
+    return this.httpClient.get(`http://localhost:3000/cart/dec/${id}`,
+      {
+        headers: { Authorization: `${localStorage.getItem('token')}` },
+      });
+  }
+
 }

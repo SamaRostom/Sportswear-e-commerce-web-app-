@@ -1,5 +1,5 @@
 const { ObjectId } = require("mongodb");
-const { deleteOne, insertOne, find, findOne, update } = require("./Base");
+const { deleteOne, insertOne, find, findOne, update, updateadd } = require("./Base");
 
 class BaseModel {
     name;

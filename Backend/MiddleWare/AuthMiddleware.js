@@ -1,4 +1,4 @@
-const {UsersService} = require("../service/UserService");
+const { UsersService } = require("../service/UserService");
 const bcrypt = require("bcrypt");
 var jwt = require('jsonwebtoken');
 
@@ -17,7 +17,7 @@ async function isuser(req, res, next) {
     let user = await userS.findById(decode.id);
 
     if (!user)
-        return res.status(401).json({message: "unauthorized"})
+        return res.status(401).json({ message: "unauthorized" })
     req.user = user;
     next();
 }

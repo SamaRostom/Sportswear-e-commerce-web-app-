@@ -4,10 +4,11 @@ const path = require("path");
 const cors = require("cors")
 const bodyParser = require("body-parser");
 const { PORT } = require("./configure")
-const { list, viewOne, create, update, deleteproduct, addRate, topselling, onsale, newProducts,GetByCategory } = require("./Controllers/productController");
+const { list, viewOne, create, update, deleteproduct, addRate, topselling, onsale, newProducts, GetByCategory } = require("./Controllers/productController");
 const { storage } = require("./MiddleWare/productMiddleWare");
 const { createorder } = require("./Controllers/OrdersController");
 const { login, register,getuser} = require("./Controllers/UsersController");
+const { login, register, getuser } = require("./Controllers/UsersController");
 const { CartController } = require('./Controllers/cartcontroller')
 const { isuser } = require('./MiddleWare/AuthMiddleware')
 let CartControllers = new CartController();
@@ -37,27 +38,27 @@ app.get("/new", newProducts);
 // get onsale products
 app.get("/onsale", onsale);
 // get products by category
-app.get("/getproducts/:category",GetByCategory);
+app.get("/getproducts/:category", GetByCategory);
 
 //--------------- User Routes ------------------------//
 
 app.post("/login", login);
 app.post("/register", register);
-app.get("/getuser",getuser);
+app.get("/getuser", getuser);
 
 //------------------ order Routes ---------------------//
 app.post("/order",createorder)
 //--------------- cart Routes ------------------------//
 app.post('/cart/create', CartControllers.create)
-app.put('/cart/add/:pid', isuser, CartControllers.add)
-app.post('/cart/inc/:pid', CartControllers.inc)
-app.post('/cart/dec/:pid', CartControllers.dec)
-app.put('/cart/remove/:pid', isuser, CartControllers.remove)
-app.get("/cart/:id", CartControllers.viewOne);
-app.post("/cart/price", CartControllers.subtotal);
-app.post("/cart/ship", CartControllers.shipping);
-app.post("/cart/totalprice", CartControllers.total);
-app.post("/auth/register", register)
+app.get('/cart/add/:pid', isuser, CartControllers.add)
+app.get('/cart/inc/:pid', isuser, CartControllers.inc)
+app.get('/cart/dec/:pid', isuser, CartControllers.dec)
+app.get('/cart/remove/:pid', isuser, CartControllers.remove)
+app.get("/cart", isuser, CartControllers.viewOne);
+app.get('/cart/price', isuser, CartControllers.subtotal);
+app.get("/cart/ship", isuser, CartControllers.shipping);
+app.get("/cart/totalprice", isuser, CartControllers.total);
+app.post("/auth/register", isuser, register)
 app.post("/auth/login", isuser, login)
 
 

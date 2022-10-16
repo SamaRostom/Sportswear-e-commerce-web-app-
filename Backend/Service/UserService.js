@@ -1,4 +1,4 @@
-const {User} = require("../DataBase/user");
+const { User } = require("../DataBase/user");
 const jwt = require('jsonwebtoken');
 const bcrypt = require("bcrypt");
 
@@ -7,19 +7,22 @@ class UsersService {
     async login(username, password) {
 
         let userModel = new User;
-        let userlist = await userModel.find({username: username});
+
+        let userlist = await userModel.find({ username: username });
+
+
         // check if user found
         if (userlist.length == 0)
-            return {status: false, message: "user not found"};
+            return { status: false, message: "user not found" };
 
         let user = userlist[0]
         // check password matched (encryption)
         if (!(await this.passwordIsMatched(user.password, password.toString())))
-            return {status: false, message: "password is wrong"};
+            return { status: false, message: "password is wrong" };
 
-        let token = jwt.sign({username: user.username, id: user._id}, 'shhhhh');
+        let token = jwt.sign({ username: user.username, id: user._id }, 'shhhhh');
 
-        return {status: true, token};
+        return { status: true, token };
     }
 
     async findById(authid) {
@@ -27,7 +30,7 @@ class UsersService {
         return userModel.findOne(authid);
     }
 
-    async register(username, password ,email) {
+    async register(username, password, email) {
         let userModel = new User;
 
         let canCount = await this.checkUserName(username)
@@ -39,13 +42,13 @@ class UsersService {
 
 
         return userModel.insertOne({
-            username, password,email,isAdmin: false
+            username, password, email, isAdmin: false
         });
     }
 
     async checkUserName(username) {
         let userModel = new User;
-        let userList = await userModel.find({username});
+        let userList = await userModel.find({ username });
         return userList.length > 0 ? false : true;
     }
 
@@ -69,8 +72,8 @@ class UsersService {
 
     async makeAToken(user) {
 
-        let header = {"alg": "HS256", "typ": "JWT"};
-        let payload = {username: user.username, id: user._id};
+        let header = { "alg": "HS256", "typ": "JWT" };
+        let payload = { username: user.username, id: user._id };
         let sing = {};
 
 
