@@ -23,11 +23,13 @@ class BaseModel {
     }
     async findcart(id) {
         try {
-            return await findOne(this.name, { user_id: ObjectId(id) })
+            
+            return await findOne("cart", { user_id: ObjectId(id) })
         } catch (e) {
             return null
         }
     }
+
     async updateadd(id, params) {
         try {
             return await updateadd(this.name, id, params)

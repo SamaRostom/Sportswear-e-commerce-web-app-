@@ -6,6 +6,7 @@ const bodyParser = require("body-parser");
 const { PORT } = require("./configure")
 const { list, viewOne, create, update, deleteproduct, addRate, topselling, onsale, newProducts,GetByCategory } = require("./Controllers/productController");
 const { storage } = require("./MiddleWare/productMiddleWare");
+const { createorder } = require("./Controllers/OrdersController");
 const { login, register,getuser} = require("./Controllers/UsersController");
 const { CartController } = require('./Controllers/cartcontroller')
 const { isuser } = require('./MiddleWare/AuthMiddleware')
@@ -44,6 +45,8 @@ app.post("/login", login);
 app.post("/register", register);
 app.get("/getuser",getuser);
 
+//------------------ order Routes ---------------------//
+app.post("/order",createorder)
 //--------------- cart Routes ------------------------//
 app.post('/cart/create', CartControllers.create)
 app.put('/cart/add/:pid', isuser, CartControllers.add)
