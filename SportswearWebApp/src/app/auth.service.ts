@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 export class AuthService {
 
 
-  constructor(private httpClient: HttpClient, private router: Router) { }
+constructor(private httpClient: HttpClient, private router: Router) { }
 
   login(username: string, password: string) {
     return this.httpClient.post('http://localhost:3000/auth/login', {

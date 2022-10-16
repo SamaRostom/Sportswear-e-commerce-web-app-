@@ -113,7 +113,7 @@ class CartController {
         if (cart.items == null) { return }
         let array = cart.items
         for (var i = 0; i < array.length; i++) {
-            pc += array[i].item.price * array[i].qyt;
+            pc += array[i].item.price*(1-array[i].item.discount) * array[i].qyt;
         }
 
         res.json({

@@ -1,6 +1,4 @@
-<main>
-
-    <section class="h-100 h-custom" style="background-color: #eee;">
+<section class="h-100 h-custom" style="background-color: #eee;" id="cart">
         <div class="container h-100 py-5">
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col">
@@ -26,7 +24,7 @@
                                                 </h5>
 
                                                 <div class="d-flex align-items-center">
-                                                    <p class="fw-bold mb-0 me-5 pe-3">{{a.item.price}}</p>
+                                                    <p class="fw-bold mb-0 me-5 pe-3">{{a.item.price*(1-a.item.discount)|number:'1.0-0'}}</p>
                                                     <div class="def-number-input number-input safari_only">
                                                         <button class="minus" (click)="dec(a.item._id)"></button>
                                                         <input class="quantity fw-bold text-black" min="0"
@@ -109,6 +107,5 @@
                 </div>
             </div>
         </div>
-    </section>
+</section>
 
-</main>

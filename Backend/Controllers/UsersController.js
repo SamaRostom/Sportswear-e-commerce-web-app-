@@ -36,9 +36,10 @@ const getuser = async (req,res)=>{
     let userS = new UsersService
     let user = await userS.findById(decode.id);
 
-    res.json(
-        user
-    );
+    res.json({
+        "username":user.username,
+        "email":user.email
+    });
     
 }
 

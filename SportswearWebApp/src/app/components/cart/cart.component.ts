@@ -13,8 +13,8 @@ export class CartComponent implements OnInit {
 
 
   }
-  price: any = 0;
-  Ship: any = 0;
+  price: any ;
+  Ship: any ;
   public items: Array<any> = []
   delete(id: any) { this.cartservice.removeproduct(id).subscribe((data) => { window.location.reload() }) }
   inc(id: any) { this.cartservice.inc(id).subscribe((data) => { }) }

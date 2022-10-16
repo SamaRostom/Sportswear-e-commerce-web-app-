@@ -10,5 +10,4 @@ export interface Products {
   name:String;
   nsale:number;
   price:number;
-
 }
