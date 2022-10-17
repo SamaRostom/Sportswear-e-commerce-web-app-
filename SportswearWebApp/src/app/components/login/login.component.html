@@ -4,12 +4,13 @@
   <p class='text-center'>Dive in adventures with us</p>
   <form (ngSubmit)="login()" #loginForm>
     <div class="input-group mb-3">
-      <span class="input-group-text"><i class="fas fa-at"></i></span>
+      <span class="input-group-text"><i class="fas fa-user"></i></span>
       <input type="text" class="form-control" placeholder="Insert your username" #username required="required"
         [(ngModel)]="user.username" name="username" [ngModelOptions]="{ standalone: true }">
 
       <span style="color: red" *ngIf="user.username === ''">Please enter a valid username</span>
     </div>
+
     <div class="input-group mb-3">
       <span class="input-group-text"><i class="fas fa-lock"></i></span>
       <input type="password" class="form-control" placeholder="Insert your password" name="Password" type="password"
