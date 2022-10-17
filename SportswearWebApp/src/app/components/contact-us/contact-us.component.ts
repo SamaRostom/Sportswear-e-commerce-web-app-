@@ -10,7 +10,7 @@ export class ContactUsComponent implements OnInit {
   contactsForm: FormGroup = new FormGroup({
     Fullname: new FormControl('', [Validators.required]),
     email: new FormControl('', [Validators.required, Validators.email]),
-    message: new FormControl('', [Validators.required]),
+    message: new FormControl('', [Validators.required])
   });
 
   constructor(private contactservice:ContactService) { }
@@ -33,7 +33,6 @@ export class ContactUsComponent implements OnInit {
         this.isLoading = false;
       }
     );
-
   }
 
 }

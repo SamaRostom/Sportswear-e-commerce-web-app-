@@ -18,6 +18,7 @@ import { RatingComponent } from './components/rating/rating.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { CheckoutFormComponent } from './components/checkout-form/checkout-form.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { CommonModule } from '@angular/common';
     LoginComponent,
     ProfileComponent,
     RatingComponent,
-    CartComponent
+    CartComponent,
+    CheckoutFormComponent
 
   ],
   imports: [

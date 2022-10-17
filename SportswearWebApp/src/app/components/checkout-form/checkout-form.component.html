@@ -1,0 +1,61 @@
+<form class="mb-5" [formGroup]="checkoutForm" (ngSubmit)="DoCheckout()">
+
+  <div class="form-outline mb-5">
+      <input type="text" id="typeText" class="form-control form-control-lg"
+      required="required" formControlName="cardNumber"/>
+      <label class="form-label" for="typeText">Card Number</label>
+      <p *ngIf="checkoutForm.controls['cardNumber']?.errors?.['maxlength']" class="text-danger">
+        please Enter Correct Card Number (19 Numbers)
+      </p>
+      <p *ngIf="checkoutForm.controls['cardNumber']?.errors?.['minlength']" class="text-danger">
+        please Enter Correct Card Number (19 Numbers)
+      </p>
+  </div>
+
+  <div class="form-outline mb-5">
+      <input type="text" id="typeName" class="form-control form-control-lg"
+      required="required" formControlName="name"/>
+      <label class="form-label" for="typeName">Name on card</label>
+      <p *ngIf="checkoutForm.controls['name'].errors" class="text-danger">
+        Please enter your name
+      </p>
+  </div>
+
+  <div class="row">
+      <div class="col-md-6 mb-5">
+          <div class="form-outline">
+              <input type="text" id="typeExp" class="form-control form-control-lg"
+              required="required" formControlName="expire"/>
+              <label class="form-label" for="typeExp">Expiration</label>
+              <p *ngIf="checkoutForm.controls['expire']?.errors?.['maxlength']" class="text-danger">
+                please Enter Correct Expiration Date (mm/yy)
+              </p>
+              <p *ngIf="checkoutForm.controls['expire']?.errors?.['minlength']" class="text-danger">
+                please Enter Correct Expiration Date (mm/yy)
+              </p>
+          </div>
+      </div>
+      <div class="col-md-6 mb-5">
+          <div class="form-outline">
+              <input type="password" id="typeText" required="required" formControlName="cvv"
+              class="form-control form-control-lg"/>
+              <label class="form-label" for="typeText">Cvv</label>
+              <p *ngIf="checkoutForm.controls['cvv']?.errors?.['maxlength']" class="text-danger">
+                please Enter Correct Cvv
+              </p>
+              <p *ngIf="checkoutForm.controls['cvv']?.errors?.['minlength']" class="text-danger">
+                please Enter Correct Cvv
+              </p>
+          </div>
+      </div>
+  </div>
+
+
+
+  <button type="submit" class="btn btn-primary btn-block btn-lg" style="background-color:#2a718e;"
+  [disabled]="(!checkoutForm.valid) && (!isLoading)"
+   >Buy now</button>
+
+
+
+</form>

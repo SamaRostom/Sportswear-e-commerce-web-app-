@@ -49,11 +49,17 @@ export class CartService {
       });
   }
 
-  checkout(){
-    return  this.httpClient.post(`http://localhost:3000/order`,
+  checkout(checkoutForm:any){
+    return  this.httpClient.post(`http://localhost:3000/order`,{
+      cardNumber: checkoutForm.value.cardnumber,
+      name: checkoutForm.value.name,
+      cvv:checkoutForm.value.cvv,
+      expire:checkoutForm.value.expire
+    },
     {
       headers: { Authorization: `${localStorage.getItem('token')}` },
     });
   }
+
 
 }

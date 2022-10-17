@@ -60,7 +60,7 @@
       Please enter a message
     </p>
     <br>
-    <input id="btn" type="submit" value="send">
+    <input id="btn" type="submit" value="send" [disabled]="(!contactsForm.valid) && (!isLoading)">
 
   </form>
 </div>

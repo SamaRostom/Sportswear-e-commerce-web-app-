@@ -9,6 +9,8 @@ import { CartService } from 'src/app/cart.service';
 
 export class CartComponent implements OnInit {
   @Input() id: any
+  
+
   constructor(private cartservice: CartService) {
 
 
@@ -55,9 +57,8 @@ export class CartComponent implements OnInit {
   }
 
 
-  DoCheckout(){
-    this.cartservice.checkout();
-  }
+
+
 
 
 }
