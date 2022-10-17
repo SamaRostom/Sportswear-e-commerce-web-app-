@@ -36,18 +36,30 @@
         </div>
     </section>
   </div>
-  <form>
+  <form [formGroup]="contactsForm" (ngSubmit)="sendMessage()">
     <h1 style="color:white;">Send Message</h1>
 
     <p style="color:white;">Full Name</p>
-    <input type="text" name="fname" required>
+    <input type="text" name="fname" required="required" formControlName="Fullname">
+    <p *ngIf="contactsForm.controls['Fullname'].errors" class="text-danger">
+      Please enter your name
+    </p>
     <br>
     <p style="color:white;">Email</p>
-    <input type="email" name="email" required>
+    <input type="email" name="email" required="required" formControlName="email">
+    <p *ngIf="contactsForm.controls['email']?.errors?.['required']" class="text-danger">
+      Please enter your email
+    </p>
+    <p *ngIf="contactsForm.controls['email']?.errors?.['email']" class="text-danger">
+      Please enter a valid email
+    </p>
     <br>
     <p style="color:white;">Message</p>
-    <input id="msg" type="text" name="message" required>
-    <br><br>
+    <input id="msg" type="text" name="message" required="required" formControlName="message">
+    <p *ngIf="contactsForm.controls['message'].errors" class="text-danger">
+      Please enter a message
+    </p>
+    <br>
     <input id="btn" type="submit" value="send">
 
   </form>

@@ -1,3 +1,5 @@
+
+
 *{
   font-family:sans-serif;
 }
@@ -24,9 +26,9 @@ section{
 }
 form{
   background:#2a718e;
-  height:420px;
+  height: 500px;
   width:400px;
-  padding:20px;
+  padding:10px;
   box-shadow: 5px 5px 5px 5px #bebbbb;
   margin-left:80px;
   border-radius:1px;
@@ -48,9 +50,11 @@ input{
   justify-content:space-between;
   width:900px;
   margin-left:200px;
+  margin-bottom: 100px !important;
+
 }
 #icons{
-  margin-top:100px;
+  margin-top:200px;
 }
 #btn{
   background:#d1cfcf;
@@ -99,5 +103,6 @@ input{
 
 form{
   margin-top: 70px;
+  height: 100%;
 }
 

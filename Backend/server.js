@@ -10,8 +10,16 @@ const { createorder } = require("./Controllers/OrdersController");
 const { login, register,getuser} = require("./Controllers/UsersController");
 const { CartController } = require('./Controllers/cartcontroller')
 const { isuser } = require('./MiddleWare/AuthMiddleware')
+const {listMessage,sendMessage} = require("./Controllers/ContactSController")
 let CartControllers = new CartController();
+
+
+
+
+
 const app = express();
+
+
 //Global Middlewares
 app.use(bodyParser.json())
 app.use('/images', express.static(path.join('images')));
@@ -49,6 +57,10 @@ app.get("/getuser", isuser,getuser);
 //------------------ order Routes ---------------------//
 // create order with cart data when checkout is done
 app.post("/order",createorder)
+
+//----------------- Contact Routes --------------------//
+app.post("/sendMessage",sendMessage)
+app.get("/listMessages" , listMessage)
 
 //--------------- cart Routes ------------------------//
 app.post('/cart/create', CartControllers.create)

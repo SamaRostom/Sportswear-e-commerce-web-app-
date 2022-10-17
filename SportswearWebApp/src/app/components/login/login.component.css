@@ -1,3 +1,10 @@
+#login{
+  padding-bottom: 100px !important;
+  padding-top: 100px !important;
+  background-image: url("/assets/images/o.jpg");
+}
+
+
 @media (min-width: 995px) {
   body{
       height:100vh
