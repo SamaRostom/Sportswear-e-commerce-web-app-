@@ -1,0 +1,9 @@
+[{
+  "_id": {
+    "$oid": "634cd45955b81c042d9565ec"
+  },
+  "username": "Hadeel",
+  "password": "$2b$10$RLWJuoGV/VNilKJPjcQ6/.En6oFvniSXFts1K5xMiBz4GI4ssk7VG",
+  "email": "hadeelsameh24@gmail.com",
+  "isAdmin": false
+}]

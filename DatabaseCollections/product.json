@@ -1,0 +1,66 @@
+[{
+  "_id": {
+    "$oid": "63475bdf04c68e09ed08fb9e"
+  },
+  "imagePath": "http://localhost:3000/images/ball.jpg",
+  "rate": 4,
+  "nratings": 2,
+  "Description": "this is a ball",
+  "category": "utility",
+  "discount": 0.5,
+  "name": "FootBall",
+  "nsale": 10,
+  "price": 1000
+},{
+  "_id": {
+    "$oid": "6349cceaa2e4778d08e2f04e"
+  },
+  "imagePath": "http://localhost:3000/images/b.jpg",
+  "rate": 0,
+  "nratings": 0,
+  "Description": "gray bottle",
+  "category": "bottles",
+  "discount": 0.1,
+  "name": "Gray Bottle 300ml",
+  "nsale": 3,
+  "price": 50
+},{
+  "_id": {
+    "$oid": "6349cd9ea2e4778d08e2f04f"
+  },
+  "imagePath": "http://localhost:3000/images/i.jpg",
+  "rate": 0,
+  "nratings": 0,
+  "Description": "ColorFull Rocket",
+  "category": "utility",
+  "discount": 0,
+  "name": "ColorFull Rocket",
+  "nsale": 200,
+  "price": 300
+},{
+  "_id": {
+    "$oid": "6349ce21a2e4778d08e2f050"
+  },
+  "imagePath": "http://localhost:3000/images/yogamat.jpg",
+  "rate": 0,
+  "nratings": 0,
+  "Description": "Galaxy",
+  "category": "Mat",
+  "discount": 0.7,
+  "name": "Galaxy Yoga mat ",
+  "nsale": 34,
+  "price": 250
+},{
+  "_id": {
+    "$oid": "634cc72a55b81c042d9565eb"
+  },
+  "imagePath": "http://localhost:3000/images/product-6.jpg",
+  "rate": 3.5,
+  "nratings": 11,
+  "Description": "Smart watch black color",
+  "discount": "0.2",
+  "name": "Iwatch series3 Black",
+  "nsale": "13",
+  "price": "500",
+  "category": "watches"
+}]
