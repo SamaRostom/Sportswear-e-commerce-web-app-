@@ -17,10 +17,10 @@ const login = async (req, res) => {
 
 const register = async (req, res) => {
 
-    const { username, password, email } = req.body;
+    const { username,email,password } = req.body;
 
     let userService = new UsersService;
-    let user = await userService.register(username, password, email)
+    let user = await userService.register(username, email,password)
     let Cart = new cart();
     let usr = await userService.finduser(username)
     await Cart.insertOne({

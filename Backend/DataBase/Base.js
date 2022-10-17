@@ -17,7 +17,7 @@ function MongoConnect(url) {
 function collection(name) {
     return new Promise((resolve, reject) => {
         MongoConnect(URL).then((db) => {
-            const dbo = db.db("shop");
+            const dbo = db.db("ecommerce");
 
             dbo.createCollection(name, function (err, res) {
                 if (err) {
@@ -34,7 +34,7 @@ function collection(name) {
 function insertOne(collectionName, data) {
     return new Promise((resolve, reject) => {
         MongoConnect('mongodb://127.0.0.1:27017').then(db => {
-            const dbo = db.db("shop")
+            const dbo = db.db("ecommerce")
             dbo.collection(collectionName).insertOne(data, function (error, result) {
                 if (error) {
                     reject(error)
@@ -49,7 +49,7 @@ function insertOne(collectionName, data) {
 function find(collectionName, filter = {}) {
     return new Promise((resolve, reject) => {
         MongoConnect(URL).then((db) => {
-            const dbo = db.db("shop");
+            const dbo = db.db("ecommerce");
             dbo.collection(collectionName).find(filter).toArray(function (error, result) {
                 if (error) return reject(error);
                 resolve(result);
@@ -62,7 +62,7 @@ function find(collectionName, filter = {}) {
 function findOne(collectionName, filter = {}) {
     return new Promise((resolve, reject) => {
         MongoConnect(URL).then((db) => {
-            const dbo = db.db("shop");
+            const dbo = db.db("ecommerce");
             dbo.collection(collectionName).findOne(filter, function (error, result) {
                 if (error) return reject(error);
                 resolve(result);
@@ -75,7 +75,7 @@ function findOne(collectionName, filter = {}) {
 function update(collectionName, id, data) {
     return new Promise((resolve, reject) => {
         MongoConnect(URL).then((db) => {
-            const dbo = db.db("shop");
+            const dbo = db.db("ecommerce");
             dbo.collection(collectionName).updateOne({ _id: ObjectId(id) }, { $set: data }, function (error, result) {
                 if (error) return reject(error);
                 resolve(result);
@@ -87,7 +87,7 @@ function update(collectionName, id, data) {
 function updateadd(collectionName, id, data) {
     return new Promise((resolve, reject) => {
         MongoConnect(URL).then((db) => {
-            const dbo = db.db("shop");
+            const dbo = db.db("ecommerce");
             dbo.collection(collectionName).updateOne({ user_id: ObjectId(id) }, { $set: data }, function (error, result) {
                 if (error) return reject(error);
                 resolve(result);
@@ -99,7 +99,7 @@ function updateadd(collectionName, id, data) {
 function deleteOne(collectionName, id) {
     return new Promise((resolve, reject) => {
         MongoConnect(URL).then((db) => {
-            const dbo = db.db("shop");
+            const dbo = db.db("ecommerce");
             dbo.collection(collectionName).deleteOne({ _id: ObjectId(id) }, function (error, result) {
                 if (error) return reject(error);
                 resolve(result);

@@ -49,9 +49,9 @@ app.get("/getproducts/:category", GetByCategory);
 
 //--------------- User Routes ------------------------//
 // register user
-app.post("/auth/register", isuser, register)
+app.post("/auth/register",register)
 // login user
-app.post("/auth/login", isuser, login)
+app.post("/auth/login",login)
 // get user data by token.id
 app.get("/getuser", isuser,getuser);
 //------------------ order Routes ---------------------//
