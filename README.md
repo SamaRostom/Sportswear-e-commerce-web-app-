@@ -45,4 +45,3 @@
   - you nead to do the previos steps.
   - run the command ng serve after installing any missing requirements.
 
-3) 
