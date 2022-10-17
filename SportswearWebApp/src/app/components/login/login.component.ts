@@ -17,19 +17,45 @@ export class LoginComponent implements OnInit {
   constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void { }
+  vaild: any
+  iSValidate(user: any) {
+    if (user.status == false) {
+      return false
+      //this.vaild = "Please Enter Right Username and Password";
+
+    }
+    else {
+      //this.vaild = ""
+      return true
+    }
+  }
   login() {
     this.isLoading = true;
     this.authService.login(this.user.username, this.user.password).subscribe(
       (data) => {
-        this.authService.saveToken(data);
-        console.log(data)
-        this.isLoading = false;
-        this.router.navigate(['']);
-      },
-      (error) => {
-        console.log(error);
-        alert('Please enter a valid username or password');
-        this.isLoading = false;
+
+        if (this.iSValidate(data)) {
+          this.authService.saveToken(data);
+          console.log(data)
+          this.isLoading = false;
+          this.router.navigate(['']);
+        }
+        else {
+          //console.log(error);
+          alert('Please enter a valid username or password');
+          this.isLoading = false;
+        }
+
+
+        // this.authService.saveToken(data);
+        // console.log(data)
+        // this.isLoading = false;
+        // this.router.navigate(['']);
+        // },
+        // (error) => {
+        //   console.log(error);
+        //   alert('Please enter a valid username or password');
+        //   this.isLoading = false;
       }
     );
   }

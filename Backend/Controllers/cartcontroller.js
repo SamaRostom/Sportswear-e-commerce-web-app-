@@ -19,7 +19,26 @@ class CartController {
             message: "cart created successfully"
         });
     }
+    async qyt(req, res) {
+        const user = req.user;
+        const pid = req.params.pid;
 
+        let cservice = new CartService()
+        let car = await cservice.one(user._id)
+        let array = car.items
+        let result
+        for (let i = 0; i < array.length; i++) {
+            if (array[i].item._id == pid) {
+
+                result = i
+            }
+        }
+        res.json({
+            qyt: car.items[result].qyt
+
+        });
+
+    }
     async add(req, res) {
 
         const user = req.user;
@@ -28,7 +47,25 @@ class CartController {
         let product = await pservice.one(pid)
         let cservice = new CartService()
         let car = await cservice.one(user._id)
-        car.items.push({ "item": product, "qyt": 1 })
+        let array = car.items
+        let flag = false
+        let result
+        for (let i = 0; i < array.length; i++) {
+            if (array[i].item._id == pid) {
+                flag = true;
+                result = i
+            }
+        }
+        if (flag) {
+            let quantity = car.items[result].qyt
+            car.items[result].qyt = quantity + 1;
+        }
+        else {
+            car.items.push({ "item": product, "qyt": 1 })
+        }
+
+
+
         res.json({
             car: await cservice.updateadd(user._id, car)
 
@@ -67,8 +104,15 @@ class CartController {
                 result = i;
             }
         }
+
         let quantity = car.items[result].qyt
-        if (quantity == 0) { return }
+        if (quantity == 1) {
+            let pservice = new ProductService();
+            let product = await pservice.one(pid);
+            car.items.pop(product)
+            cservice.updateadd(user._id, car)
+            return
+        }
         car.items[result].qyt = quantity - 1;
 
         res.json({

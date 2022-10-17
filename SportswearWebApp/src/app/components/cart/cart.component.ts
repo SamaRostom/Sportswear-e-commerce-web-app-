@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CartService } from 'src/app/cart.service';
 
 @Component({
@@ -9,18 +10,19 @@ import { CartService } from 'src/app/cart.service';
 
 export class CartComponent implements OnInit {
   @Input() id: any
-  constructor(private cartservice: CartService) {
+  constructor(private cartservice: CartService, private router: Router, private route: ActivatedRoute) {
 
 
   }
-  price: any ;
-  Ship: any ;
+  price: any;
+  Ship: any;
   public items: Array<any> = []
   delete(id: any) { this.cartservice.removeproduct(id).subscribe((data) => { window.location.reload() }) }
-  inc(id: any) { this.cartservice.inc(id).subscribe((data) => { }) }
-  dec(id: any) { this.cartservice.dec(id).subscribe((data) => { }) }
-  ngOnInit(): void {
+  inc(id: any) { this.cartservice.inc(id).subscribe((data) => { window.location.reload() }) }
+  dec(id: any) { this.cartservice.dec(id).subscribe((data) => { window.location.reload() }) }
 
+
+  ngOnInit(): void {
 
     this.cartservice.getShip().subscribe(
       (data) => {
@@ -55,7 +57,7 @@ export class CartComponent implements OnInit {
   }
 
 
-  DoCheckout(){
+  DoCheckout() {
     this.cartservice.checkout();
   }
 
