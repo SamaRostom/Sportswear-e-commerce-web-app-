@@ -42,6 +42,12 @@ export class CartService {
         headers: { Authorization: `${localStorage.getItem('token')}` },
       });
   }
+  qyt(id: any) {
+    return this.httpClient.get(`http://localhost:3000/cart/qyt/${id}`,
+      {
+        headers: { Authorization: `${localStorage.getItem('token')}` },
+      });
+  }
   dec(id: any) {
     return this.httpClient.get(`http://localhost:3000/cart/dec/${id}`,
       {

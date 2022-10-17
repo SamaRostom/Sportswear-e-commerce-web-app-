@@ -1,46 +1,52 @@
-const {UsersService} = require("../service/UserService");
+const { UsersService } = require("../service/UserService");
+const { cart } = require("../DataBase/cart");
 const jwt = require('jsonwebtoken');
 
 
-const login= async (req, res)=>{
+const login = async (req, res) => {
 
-        const {username, password} = req.body;
+    const { username, password } = req.body;
 
-        let userService = new UsersService;
-        let user = await userService.login(username, password)
+    let userService = new UsersService;
+    let user = await userService.login(username, password)
 
-        res.json(
-            user
-        );
-    }
+    res.json(
+        user
+    );
+}
 
-const register = async (req, res)=>{
+const register = async (req, res) => {
 
-        const {username, password ,email } = req.body;
+    const { username, password, email } = req.body;
 
-        let userService = new UsersService;
-        let user = await userService.register(username, password,email)
+    let userService = new UsersService;
+    let user = await userService.register(username, password, email)
+    let Cart = new cart();
+    let usr = await userService.finduser(username)
+    await Cart.insertOne({
+        "user_id": usr._id,
+        "items": [],
+    });
+    res.json(
+        user
+    );
+}
 
-        res.json(
-            user
-        );
-    }
 
-
-const getuser = async (req,res)=>{
+const getuser = async (req, res) => {
     const token = req.headers["authorization"]
 
-    
+
     let decode = jwt.verify(token, 'shhhhh')
 
     let userS = new UsersService
     let user = await userS.findById(decode.id);
 
     res.json({
-        "username":user.username,
-        "email":user.email
+        "username": user.username,
+        "email": user.email
     });
-    
+
 }
 
 

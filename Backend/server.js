@@ -66,6 +66,7 @@ app.get("/listMessages" , listMessage)
 app.post('/cart/create', CartControllers.create)
 app.get('/cart/add/:pid', isuser, CartControllers.add)
 app.get('/cart/inc/:pid', isuser, CartControllers.inc)
+app.get('/cart/qyt/:pid', isuser, CartControllers.qyt)
 app.get('/cart/dec/:pid', isuser, CartControllers.dec)
 app.get('/cart/remove/:pid', isuser, CartControllers.remove)
 app.get("/cart", isuser, CartControllers.viewOne);

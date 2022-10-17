@@ -8,15 +8,30 @@ import { Router } from '@angular/router';
 export class AuthService {
 
 
-constructor(private httpClient: HttpClient, private router: Router) { }
+  constructor(private httpClient: HttpClient, private router: Router) { }
 
+  Register(username: string, password: string, email: string) {
+    return this.httpClient.post('http://localhost:3000/auth/register', {
+      username: username,
+      password: password,
+      email: email
+    });
+
+  }
   login(username: string, password: string) {
     return this.httpClient.post('http://localhost:3000/auth/login', {
       username: username,
       password: password,
     });
-  }
 
+  }
+  create(username: string, password: string) {
+    return this.httpClient.post('http://localhost:3000/cart/create', {
+      username: username,
+      password: password,
+    });
+
+  }
   saveToken(user: any) {
     localStorage.setItem('token', user.token);
     console.log(localStorage.getItem('token'))

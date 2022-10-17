@@ -29,13 +29,16 @@ class UsersService {
         let userModel = new User;
         return userModel.findOne(authid);
     }
-
+    async finduser(authid) {
+        let userModel = new User;
+        return userModel.finduser(authid);
+    }
     async register(username, password, email) {
         let userModel = new User;
 
-        let canCount = await this.checkUserName(username)
-        if (!canCount)
-            return null;
+        // let canCount = await this.checkUserName(username)
+        // if (!canCount)
+        //     return null;
 
 
         password = await this.encrypt(password.toString());

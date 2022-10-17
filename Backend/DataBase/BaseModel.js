@@ -21,6 +21,13 @@ class BaseModel {
             return null
         }
     }
+    async finduser(name) {
+        try {
+            return await findOne(this.name, { username: name })
+        } catch (e) {
+            return null
+        }
+    }
     async findcart(id) {
         try {
             
