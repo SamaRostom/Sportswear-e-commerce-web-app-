@@ -25,7 +25,7 @@
 
                                             <div class="d-flex align-items-center">
                                                 <p class="fw-bold mb-0 me-5 pe-3">
-                                                    {{a.item.price*(1-a.item.discount)|number:'1.0-0'}}</p>
+                                                    {{a.item.price*(1-a.item.discount)|number:'1.0-0'|currency }}</p>
                                                 <div class="def-number-input number-input safari_only">
                                                     <button class="minus" (click)="dec(a.item._id)"></button>
                                                     <input class="quantity fw-bold text-black" min="0" name="quantity"
@@ -48,7 +48,7 @@
 
                                     <h3 class="mb-5 pt-2 text-center fw-bold text-uppercase">Payment</h3>
 
-                                    
+
                                 </div>
 
                                 <div class="d-flex justify-content-between px-x">
