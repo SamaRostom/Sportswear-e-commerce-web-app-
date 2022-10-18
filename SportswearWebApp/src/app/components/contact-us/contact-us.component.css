@@ -46,7 +46,7 @@ input{
 }
 #contact{
   display:flex;
-  flex-warp:nowarp;
+  flex-wrap:nowarp;
   justify-content:space-between;
   width:900px;
   margin-left:200px;

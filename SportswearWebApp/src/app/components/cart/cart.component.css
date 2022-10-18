@@ -2,14 +2,11 @@
   margin-bottom: 450px !important;
 
 }
-
-
-
 @media (min-width: 1025px) {
     .h-custom {
     height: 100vh !important;
     }
-    }
+}
 
     .number-input input[type="number"] {
     -webkit-appearance: textfield;
